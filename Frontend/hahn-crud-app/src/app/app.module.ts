@@ -29,7 +29,8 @@ import { AppRoutingModule } from './app.routing.module';
         MatIconModule,
         MatListModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HttpClientModule
     ],
     providers: [{ provide: MatPaginatorIntl }],
     bootstrap: [AppComponent],

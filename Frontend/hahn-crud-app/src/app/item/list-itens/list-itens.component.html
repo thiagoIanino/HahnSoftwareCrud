@@ -1,1 +1,9 @@
 <p>list-itens works!</p>
+
+<ul *ngIf="itens$ | async as itens; else loading">
+    <li *ngFor="let item of itens">{{item.name}}</li>
+</ul>
+
+<ng-template #loading>
+
+</ng-template>
