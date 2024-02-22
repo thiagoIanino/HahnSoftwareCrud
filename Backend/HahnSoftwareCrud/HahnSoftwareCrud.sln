@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HahnSoftwareCrud.Api", "HahnSoftwareCrud.Api\HahnSoftwareCrud.Api.csproj", "{6DA183AA-602A-4CA7-94BB-AADE9AC1ED25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HahnSoftwareCrud.Api", "HahnSoftwareCrud.Api\HahnSoftwareCrud.Api.csproj", "{6DA183AA-602A-4CA7-94BB-AADE9AC1ED25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HahnSoftwareCrud.Application", "HahnSoftwareCrud.Application\HahnSoftwareCrud.Application.csproj", "{EF039BFE-9B9C-47B2-BDA6-E973DCCA28E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HahnSoftwareCrud.Domain", "HahnSoftwareCrud.Domain\HahnSoftwareCrud.Domain.csproj", "{132E2654-9BA2-484D-A7AB-B1C6315E930C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HahnSoftwareCrud.Infrastructure", "HahnSoftwareCrud.Infrastructure\HahnSoftwareCrud.Infrastructure.csproj", "{0F3E7BA4-1193-473C-8783-417C1D0EF7BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HahnSoftwareCrud.Tests", "HahnSoftwareCrud.Tests\HahnSoftwareCrud.Tests.csproj", "{ABDC4602-E39F-4F0F-BF14-0C6DBF4DD93F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{6DA183AA-602A-4CA7-94BB-AADE9AC1ED25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DA183AA-602A-4CA7-94BB-AADE9AC1ED25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DA183AA-602A-4CA7-94BB-AADE9AC1ED25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF039BFE-9B9C-47B2-BDA6-E973DCCA28E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF039BFE-9B9C-47B2-BDA6-E973DCCA28E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF039BFE-9B9C-47B2-BDA6-E973DCCA28E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF039BFE-9B9C-47B2-BDA6-E973DCCA28E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{132E2654-9BA2-484D-A7AB-B1C6315E930C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132E2654-9BA2-484D-A7AB-B1C6315E930C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132E2654-9BA2-484D-A7AB-B1C6315E930C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132E2654-9BA2-484D-A7AB-B1C6315E930C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F3E7BA4-1193-473C-8783-417C1D0EF7BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F3E7BA4-1193-473C-8783-417C1D0EF7BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F3E7BA4-1193-473C-8783-417C1D0EF7BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F3E7BA4-1193-473C-8783-417C1D0EF7BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABDC4602-E39F-4F0F-BF14-0C6DBF4DD93F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABDC4602-E39F-4F0F-BF14-0C6DBF4DD93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABDC4602-E39F-4F0F-BF14-0C6DBF4DD93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABDC4602-E39F-4F0F-BF14-0C6DBF4DD93F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
