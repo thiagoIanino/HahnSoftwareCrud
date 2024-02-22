@@ -9,7 +9,7 @@ import { Item} from './item.model';
 })
 export class ItemService {
 
-  private baseURL = 'http://localhost:3000'
+  private baseURL = 'https://localhost:5000'
   private endpoint = 'itens'
 
   constructor(private httpClient: HttpClient) {   }

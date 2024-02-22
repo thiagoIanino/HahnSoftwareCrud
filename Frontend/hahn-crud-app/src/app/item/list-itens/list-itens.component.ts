@@ -11,6 +11,8 @@ import { Item } from '../item.model';
 export class ListItensComponent implements OnInit {
 
   itens$!: Observable<Item[]>;
+
+  tableColumns = ['id', 'name',];
   constructor(private itemService: ItemService){}
 
   ngOnInit() {
