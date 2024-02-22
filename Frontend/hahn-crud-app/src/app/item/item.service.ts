@@ -17,4 +17,8 @@ export class ItemService {
   list():Observable<Item[]>{
     return this.httpClient.get<Item[]>(`${this.baseURL}/${this.endpoint}`)
   }
+
+  create(item: Item):Observable<Item>{
+    return this.httpClient.post<Item>(`${this.baseURL}/${this.endpoint}`, item)
+  }
 }

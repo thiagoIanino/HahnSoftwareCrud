@@ -1,0 +1,15 @@
+<mat-toolbar>Create Item</mat-toolbar>
+
+<div class="container-component">
+    <form class="default-form" *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && save()"
+    novalidate>
+    <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name" required autocomplete="off">
+        <mat-error>Field is required</mat-error>
+    </mat-form-field>
+    <div class="button-line">
+        <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Save</button>
+        <button type="button" mat-raised-button routerLink="/itens">Cancel</button>
+    </div>
+</form>
+</div>

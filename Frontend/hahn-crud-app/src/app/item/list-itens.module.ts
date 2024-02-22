@@ -6,6 +6,7 @@ import { ListItensComponent } from './list-itens/list-itens.component';
 import {MatTableModule} from '@angular/material/table'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import {MatToolbarModule} from '@angular/material/toolbar'
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [ListItensComponent],
@@ -14,7 +15,8 @@ import {MatToolbarModule} from '@angular/material/toolbar'
     ListItensRoutingModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatButtonModule
   ]
 })
 export class ListItensModule { }
