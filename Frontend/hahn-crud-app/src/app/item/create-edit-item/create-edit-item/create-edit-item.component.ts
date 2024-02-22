@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ItemService } from '../../item.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Item } from '../../item.model';
 
 @Component({
   selector: 'app-create-edit-item',
@@ -11,14 +12,33 @@ import { Router } from '@angular/router';
 export class CreateEditItemComponent implements OnInit {
 
   formGroup!: FormGroup;
-  constructor(private formBuilder: FormBuilder, private itemService: ItemService, private router: Router) { }
+  item!: Item
+  constructor(
+    private formBuilder: FormBuilder,
+    private itemService: ItemService,
+    private router: Router,
+    private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.item = this.activeRoute.snapshot.data["item"]
     this.formGroup = this.formBuilder.group({
-      name: ["", Validators.required]
-    })}
+      id: [(this.item && this.item.id) ? this.item.id : null],
+      name: [(this.item && this.item.name) ? this.item.name : "", Validators.required]
+    })
+  }
 
-    save(){
+  save() {
+    if (this.item && this.item.id) {
+      this.itemService.update(this.formGroup.value).subscribe(
+        createdItem => {
+          this.router.navigateByUrl("/itens")
+        },
+        error => {
+          alert("Error updating" + JSON.stringify(error));
+        }
+      )
+    } else {
+
       this.itemService.create(this.formGroup.value).subscribe(
         createdItem => {
           this.router.navigateByUrl("/itens")
@@ -28,4 +48,18 @@ export class CreateEditItemComponent implements OnInit {
         }
       )
     }
+  }
+
+  delete() {
+    if (confirm("Do you want to delete the item" + this.item.name + "?")) {
+      this.itemService.delete(this.item.id).subscribe(
+        response => {
+          this.router.navigateByUrl("/items")
+        },
+        error => {
+          alert("Error deleting" + JSON.stringify(error));
+        }
+      )
+    }
+  }
 }

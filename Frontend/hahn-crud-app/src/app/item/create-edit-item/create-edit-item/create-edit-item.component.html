@@ -1,4 +1,4 @@
-<mat-toolbar>Create Item</mat-toolbar>
+<mat-toolbar>{{item && item.id?'Update Item' : 'Create Item'}}</mat-toolbar>
 
 <div class="container-component">
     <form class="default-form" *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && save()"
@@ -9,6 +9,7 @@
     </mat-form-field>
     <div class="button-line">
         <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Save</button>
+        <button *ngIf="item && item.id" type="button" color="warn" mat-raised-button (click)="delete()">Delete</button>
         <button type="button" mat-raised-button routerLink="/itens">Cancel</button>
     </div>
 </form>
