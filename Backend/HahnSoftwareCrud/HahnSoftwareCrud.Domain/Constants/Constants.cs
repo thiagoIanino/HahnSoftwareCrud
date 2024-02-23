@@ -11,6 +11,7 @@ namespace HahnSoftwareCrud.Domain.Constants
         public const string RequiredIdMessageError = "Id is required";
 
         public const string ItemNotFound = "The requested Item wasn't found";
+        public const string DefaultErrorMessage = "Something went wrong. Try again later";
 
         public const string ResponseUri = "http://localhost:5001/items/";
 

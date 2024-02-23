@@ -5,13 +5,15 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HahnSoftwareCrud.Api", "HahnSoftwareCrud.Api\HahnSoftwareCrud.Api.csproj", "{6DA183AA-602A-4CA7-94BB-AADE9AC1ED25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HahnSoftwareCrud.Application", "HahnSoftwareCrud.Application\HahnSoftwareCrud.Application.csproj", "{EF039BFE-9B9C-47B2-BDA6-E973DCCA28E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HahnSoftwareCrud.Application", "HahnSoftwareCrud.Application\HahnSoftwareCrud.Application.csproj", "{EF039BFE-9B9C-47B2-BDA6-E973DCCA28E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HahnSoftwareCrud.Domain", "HahnSoftwareCrud.Domain\HahnSoftwareCrud.Domain.csproj", "{132E2654-9BA2-484D-A7AB-B1C6315E930C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HahnSoftwareCrud.Domain", "HahnSoftwareCrud.Domain\HahnSoftwareCrud.Domain.csproj", "{132E2654-9BA2-484D-A7AB-B1C6315E930C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HahnSoftwareCrud.Infrastructure", "HahnSoftwareCrud.Infrastructure\HahnSoftwareCrud.Infrastructure.csproj", "{0F3E7BA4-1193-473C-8783-417C1D0EF7BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HahnSoftwareCrud.Infrastructure", "HahnSoftwareCrud.Infrastructure\HahnSoftwareCrud.Infrastructure.csproj", "{0F3E7BA4-1193-473C-8783-417C1D0EF7BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HahnSoftwareCrud.Tests", "HahnSoftwareCrud.Tests\HahnSoftwareCrud.Tests.csproj", "{ABDC4602-E39F-4F0F-BF14-0C6DBF4DD93F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HahnSoftwareCrud.Tests", "HahnSoftwareCrud.Tests\HahnSoftwareCrud.Tests.csproj", "{ABDC4602-E39F-4F0F-BF14-0C6DBF4DD93F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HahnSoftwareCrud.CrossCutting", "HahnSoftwareCrud.CrossCutting\HahnSoftwareCrud.CrossCutting.csproj", "{423661DE-C474-4120-AB51-446E3C095791}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{ABDC4602-E39F-4F0F-BF14-0C6DBF4DD93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABDC4602-E39F-4F0F-BF14-0C6DBF4DD93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABDC4602-E39F-4F0F-BF14-0C6DBF4DD93F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{423661DE-C474-4120-AB51-446E3C095791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{423661DE-C474-4120-AB51-446E3C095791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{423661DE-C474-4120-AB51-446E3C095791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{423661DE-C474-4120-AB51-446E3C095791}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

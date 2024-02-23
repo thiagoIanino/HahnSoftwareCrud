@@ -1,4 +1,5 @@
 ﻿using HahnSoftwareCrud.Application.Models;
+using HahnSoftwareCrud.Domain.Constants;
 using HahnSoftwareCrud.Domain.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -11,6 +12,7 @@ namespace HahnSoftwareCrud.Api.Filters
         public override void OnException(ExceptionContext context)
         {
             HttpStatusCode responseStatusCode;
+            var responseMessage = context.Exception.Message;
 
             if (context.Exception is BadRequestException)
                 responseStatusCode = HttpStatusCode.BadRequest;
@@ -19,9 +21,12 @@ namespace HahnSoftwareCrud.Api.Filters
                 responseStatusCode = HttpStatusCode.NotFound;
 
             else
+            {
                 responseStatusCode = HttpStatusCode.InternalServerError;
+                responseMessage = Constants.DefaultErrorMessage;
+            }
 
-            context.Result = new ObjectResult(new ErrorModel(context.Exception.Message))
+            context.Result = new ObjectResult(new ErrorModel(responseMessage))
             {
                 StatusCode = responseStatusCode.GetHashCode()
             };
