@@ -45,7 +45,12 @@ namespace HahnSoftwareCrud.Application
         {
             ValidateItemIdInput(id);
 
-           return await _itemRepository.GetItemById(id);
+           var item = await _itemRepository.GetItemById(id);
+
+            if (item == null)
+                throw new NotFoundExeption(Constants.ItemNotFound);
+
+            return item;
         }
 
         private void ValidateItemInput(Item item)
