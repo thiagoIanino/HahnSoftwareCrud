@@ -9,9 +9,9 @@ namespace HahnSoftwareCrud.Application.Interfaces
 {
     public interface IItemApplication
     {
-        Task<Item> GetItemById(int id);
-        Task<Item> CreateItem(Item item);
-        Task<Item> UpdateItem(int id, Item item);
-        Task DeleteItem(int id);
+        Task<Item> GetItemById(int id, CancellationToken cancellationToken);
+        Task<Item> CreateItem(Item item, CancellationToken cancellationToken);
+        Task<Item> UpdateItem(int id, Item item, CancellationToken cancellationToken);
+        Task DeleteItem(int id, CancellationToken cancellationToken);
     }
 }

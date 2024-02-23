@@ -9,43 +9,43 @@ namespace HahnSoftwareCrud.Application
 {
     public class ItemApplication : IItemApplication
     {
-        private readonly ItemRepository _itemRepository;
-        public ItemApplication(ItemRepository itemRepository)
+        private readonly IItemRepository _itemRepository;
+        public ItemApplication(IItemRepository itemRepository)
         {
             _itemRepository = itemRepository;
         }
 
-        public async Task<Item> CreateItem(Item item)
+        public async Task<Item> CreateItem(Item item, CancellationToken cancellationToken)
         {
             ValidateItemInput(item);
 
-            await _itemRepository.CreateItem(item);
+            await _itemRepository.CreateItem(item, cancellationToken);
 
             return item;
         }
 
-        public async Task<Item> UpdateItem(int id, Item item)
+        public async Task<Item> UpdateItem(int id, Item item, CancellationToken cancellationToken)
         {
             ValidateItemInput(item);
             ValidateItemIdInput(id);
 
-            await _itemRepository.UpdateItem(item);
+            await _itemRepository.UpdateItem(item, cancellationToken);
 
             return item;
         }
 
-        public async Task DeleteItem(int id)
+        public async Task DeleteItem(int id, CancellationToken cancellationToken)
         {
             ValidateItemIdInput(id);
 
-            await _itemRepository.DeleteItem(id);
+            await _itemRepository.DeleteItem(id, cancellationToken);
         }
 
-        public async Task<Item> GetItemById(int id)
+        public async Task<Item> GetItemById(int id, CancellationToken cancellationToken)
         {
             ValidateItemIdInput(id);
 
-           var item = await _itemRepository.GetItemById(id);
+           var item = await _itemRepository.GetItemById(id, cancellationToken);
 
             if (item == null)
                 throw new NotFoundExeption(Constants.ItemNotFound);
