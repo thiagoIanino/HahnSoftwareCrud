@@ -1,4 +1,5 @@
-﻿using HahnSoftwareCrud.Application.Validators;
+﻿using HahnSoftwareCrud.Application.Interfaces;
+using HahnSoftwareCrud.Application.Validators;
 using HahnSoftwareCrud.Domain.Constants;
 using HahnSoftwareCrud.Domain.Entities;
 using HahnSoftwareCrud.Domain.Exceptions;
@@ -6,7 +7,7 @@ using HahnSoftwareCrud.Domain.Repository;
 
 namespace HahnSoftwareCrud.Application
 {
-    public class ItemApplication
+    public class ItemApplication : IItemApplication
     {
         private readonly ItemRepository _itemRepository;
         public ItemApplication(ItemRepository itemRepository)
@@ -23,27 +24,28 @@ namespace HahnSoftwareCrud.Application
             return item;
         }
 
-        public async Task<Item> Update(Item item)
+        public async Task<Item> UpdateItem(int id, Item item)
         {
             ValidateItemInput(item);
+            ValidateItemIdInput(id);
 
             await _itemRepository.UpdateItem(item);
 
             return item;
         }
 
-        public async Task Delete(int id)
+        public async Task DeleteItem(int id)
         {
             ValidateItemIdInput(id);
 
             await _itemRepository.DeleteItem(id);
         }
 
-        public async Task GetItemById(int id)
+        public async Task<Item> GetItemById(int id)
         {
             ValidateItemIdInput(id);
 
-            await _itemRepository.GetItemById(id);
+           return await _itemRepository.GetItemById(id);
         }
 
         private void ValidateItemInput(Item item)
