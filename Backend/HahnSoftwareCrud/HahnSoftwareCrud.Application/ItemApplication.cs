@@ -26,12 +26,13 @@ namespace HahnSoftwareCrud.Application
 
             ValidateItemInput(item);
 
-            await _itemRepository.CreateItem(item, cancellationToken);
+            var itemId = await _itemRepository.CreateItem(item, cancellationToken);
+            item.Id = itemId;
 
             return item;
         }
 
-        public async Task<Item> UpdateItem(int id, Item item, CancellationToken cancellationToken)
+        public async Task<Item> UpdateItem(int? id, Item item, CancellationToken cancellationToken)
         {
             ValidateItemInput(item);
             ValidateItemIdInput(id);
@@ -41,14 +42,14 @@ namespace HahnSoftwareCrud.Application
             return item;
         }
 
-        public async Task DeleteItem(int id, CancellationToken cancellationToken)
+        public async Task DeleteItem(int? id, CancellationToken cancellationToken)
         {
             ValidateItemIdInput(id);
 
             await _itemRepository.DeleteItem(id, cancellationToken);
         }
 
-        public async Task<Item> GetItemById(int id, CancellationToken cancellationToken)
+        public async Task<Item> GetItemById(int? id, CancellationToken cancellationToken)
         {
             ValidateItemIdInput(id);
 

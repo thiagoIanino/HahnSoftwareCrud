@@ -52,7 +52,7 @@ namespace HahnSoftwareCrud.Infrastructure.Repositories
             await _mysqlRepository.ExecuteAsync(commandDefinition);
         }
 
-        public async Task DeleteItem(int id, CancellationToken cancellationToken)
+        public async Task DeleteItem(int? id, CancellationToken cancellationToken)
         {
             var parms = new DynamicParameters();
             parms.Add("@id", id, DbType.Int64);
@@ -62,7 +62,7 @@ namespace HahnSoftwareCrud.Infrastructure.Repositories
             await _mysqlRepository.ExecuteAsync(commandDefinition);
         }
 
-        public async Task<Item?> GetItemById(int id, CancellationToken cancellationToken)
+        public async Task<Item?> GetItemById(int? id, CancellationToken cancellationToken)
         {
             var parms = new DynamicParameters();
             parms.Add("@id", id, DbType.Int64);
