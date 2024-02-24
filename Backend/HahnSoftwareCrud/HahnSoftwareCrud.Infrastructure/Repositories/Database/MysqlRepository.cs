@@ -44,7 +44,7 @@ namespace HahnSoftwareCrud.Infrastructure.Repositories.Database
 
         private static IDbConnection GetMysqlConnection()
         {
-            return new MySqlConnection("Server=localhost;Port=3306;Database=hahnSoftware");
+            return new MySqlConnection("Server=127.0.0.1;Port=3306;Database=hahnSoftware;Uid=root;Pwd=hard_password;");
         }
 
     }

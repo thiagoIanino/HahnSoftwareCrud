@@ -1,4 +1,5 @@
 ﻿using HahnSoftwareCrud.Application.Interfaces;
+using HahnSoftwareCrud.Application.Models;
 using HahnSoftwareCrud.Application.Validators;
 using HahnSoftwareCrud.Domain.Constants;
 using HahnSoftwareCrud.Domain.Entities;
@@ -15,8 +16,14 @@ namespace HahnSoftwareCrud.Application
             _itemRepository = itemRepository;
         }
 
-        public async Task<Item> CreateItem(Item item, CancellationToken cancellationToken)
+        public async Task<Item> CreateItem(CreateItemModel itemInput, CancellationToken cancellationToken)
         {
+            var item = new Item 
+            { 
+                Name = itemInput.Name,
+                Quantity = itemInput.Quantity 
+            };
+
             ValidateItemInput(item);
 
             await _itemRepository.CreateItem(item, cancellationToken);

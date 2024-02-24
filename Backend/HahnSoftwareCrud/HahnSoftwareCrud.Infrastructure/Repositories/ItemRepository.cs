@@ -15,11 +15,11 @@ namespace HahnSoftwareCrud.Infrastructure.Repositories
     public class ItemRepository : IItemRepository
     {
         private const int Timeout = 30;
-        private const string CREATE_ITEM_SQL_COMMAND = "Insert into Items (name,quantity) values (@name, @quantity); SELECT LAST_INSERT_ID();";
-        private const string UPDATE_ITEM_SQL_COMMAND = "Update Items set (name,quantity) values (@name, @quantity) Where id = @id";
-        private const string DELETE_ITEM_SQL_COMMAND = "Delete Items Where id = @id";
-        private const string GET_ITEM_SQL_QUERY = "Delete Items Where id = @id";
-        private const string LIST_ITEMS_SQL_QUERY = "Delete Items Where id = @id";
+        private const string CREATE_ITEM_SQL_COMMAND = "Insert into Items (name,quantity) values (@name, @quantity); SELECT LAST_INSERT_ID()";
+        private const string UPDATE_ITEM_SQL_COMMAND = "Update Items set name = @name ,quantity = @quantity Where id = @id";
+        private const string DELETE_ITEM_SQL_COMMAND = "Delete from Items Where id = @id";
+        private const string GET_ITEM_SQL_QUERY = "Select id, name, quantity from Items where id = @id";
+        private const string LIST_ITEMS_SQL_QUERY = "Select id, name, quantity from Items";
 
 
 

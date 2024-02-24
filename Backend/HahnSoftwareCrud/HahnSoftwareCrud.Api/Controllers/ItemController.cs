@@ -1,4 +1,5 @@
 ﻿using HahnSoftwareCrud.Application.Interfaces;
+using HahnSoftwareCrud.Application.Models;
 using HahnSoftwareCrud.Domain.Constants;
 using HahnSoftwareCrud.Domain.Entities;
 using HahnSoftwareCrud.Domain.Repository;
@@ -36,7 +37,7 @@ namespace HahnSoftwareCrud.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateItem([FromBody] Item item, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateItem([FromBody] CreateItemModel item, CancellationToken cancellationToken)
         {
             var createdItem = await _itemApplication.CreateItem(item, cancellationToken);
 

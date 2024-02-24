@@ -9,8 +9,8 @@ namespace HahnSoftwareCrud.Api.Filters
 {
     public class ExceptionFilter : ExceptionFilterAttribute
     {
-        private readonly ILogger _logger;
-        public ExceptionFilter(ILogger logger)
+        private readonly ILogger<ExceptionFilter> _logger;
+        public ExceptionFilter(ILogger<ExceptionFilter> logger)
         {
             _logger = logger;
         }
@@ -30,7 +30,7 @@ namespace HahnSoftwareCrud.Api.Filters
                 responseStatusCode = HttpStatusCode.InternalServerError;
                 responseMessage = Constants.DefaultErrorMessage;
 
-                _logger.LogError("Not expected error: ", context.Exception.Message);
+                _logger.LogError($"Not expected error: {context.Exception.Message}");
             }
 
             context.Result = new ObjectResult(new ErrorModel(responseMessage))
