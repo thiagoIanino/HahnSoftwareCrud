@@ -7,10 +7,14 @@
         <input matInput placeholder="Name" formControlName="name" required autocomplete="off">
         <mat-error>Field is required</mat-error>
     </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Quantity" formControlName="quantity" required autocomplete="off">
+        <mat-error>Field is required</mat-error>
+    </mat-form-field>
     <div class="button-line">
         <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Save</button>
         <button *ngIf="item && item.id" type="button" color="warn" mat-raised-button (click)="delete()">Delete</button>
-        <button type="button" mat-raised-button routerLink="/itens">Cancel</button>
+        <button type="button" mat-raised-button routerLink="/items">Cancel</button>
     </div>
 </form>
 </div>

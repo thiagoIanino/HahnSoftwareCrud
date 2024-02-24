@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Item } from '../item.model';
-import { Observable, empty } from 'rxjs';
+import { of } from "rxjs";
 import { ItemService } from '../item.service';
 
 @Injectable({
@@ -17,6 +17,6 @@ export class ItemResolverService implements Resolve<Item>{
       if(id){
         return this.itemService.searchById(id);
       }
-      return empty()
+      return of({} as Item);
   }
 }

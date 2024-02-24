@@ -12,7 +12,7 @@ export class ListItensComponent implements OnInit {
 
   itens$!: Observable<Item[]>;
 
-  tableColumns = ['id', 'name',];
+  tableColumns = ['id', 'name','quantity'];
   constructor(private itemService: ItemService){}
 
   ngOnInit() {

@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     {path:"", component: HomeComponent},
-    {path:"itens",loadChildren: () => import('./item/list-itens.module').then(module => module.ListItensModule) },
-    {path:"itens/create",loadChildren: () => import('./item/create-edit-item/create-edit-item.module').then(module => module.CreateEditItemModule) },
-    {path:"itens/edit/:id",loadChildren: () => import('./item/create-edit-item/create-edit-item.module').then(module => module.CreateEditItemModule) }
+    {path:"items",loadChildren: () => import('./item/list-itens.module').then(module => module.ListItensModule) },
+    {path:"items/create",loadChildren: () => import('./item/create-edit-item/create-edit-item.module').then(module => module.CreateEditItemModule) },
+    {path:"items/edit/:id",loadChildren: () => import('./item/create-edit-item/create-edit-item.module').then(module => module.CreateEditItemModule) }
 ];
 
 @NgModule({
