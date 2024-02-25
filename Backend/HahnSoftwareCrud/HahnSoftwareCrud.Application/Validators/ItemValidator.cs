@@ -16,10 +16,6 @@ namespace HahnSoftwareCrud.Application.Validators
             RuleFor(item => item.Name).Length(3, 30).WithMessage("Name Lenght must be between 3 and 30 character");
             RuleFor(item => item.Quantity).InclusiveBetween(1, 99).WithMessage("Quantity must be between 1 and 99.");
 
-            RuleSet("Update", () =>
-            {
-                RuleFor(item => item.Id).NotEmpty();
-            });
         }
 
     }
