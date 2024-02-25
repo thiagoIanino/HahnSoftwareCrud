@@ -10,3 +10,6 @@ You will notice 3 different containers running. The API, Web application, and My
 - The CRUD functionalities will be available in the "Items" section on the side menu. 
 
 Thanks :)
+
+
+Overview about the project - https://www.loom.com/share/d0428bea6c774320a068caf79279f061?sid=8f040fb7-13f6-44d1-adc2-4f2f31ab3712 
