@@ -24,7 +24,7 @@ export class CreateEditItemComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       id: [(this.item && this.item.id) ? this.item.id : null],
       name: [(this.item && this.item.name) ? this.item.name : "", Validators.required],
-      quantity: [(this.item && this.item.quantity) ? this.item.quantity : 1, Validators.required]
+      quantity: [(this.item && this.item.quantity) ? this.item.quantity : null, Validators.required]
     })
   }
 

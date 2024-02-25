@@ -9,7 +9,7 @@ import { Item} from './item.model';
 })
 export class ItemService {
 
-  private baseURL = 'https://localhost:5000/api'
+  private baseURL = 'http://host.docker.internal:5000/api'
   private endpoint = 'items'
 
   constructor(private httpClient: HttpClient) {   }

@@ -1,5 +1,9 @@
 version: '3'
 
+networks:
+  hahn-network:
+    driver: bridge
+
 services:
 
   mysql:
@@ -11,9 +15,29 @@ services:
       MYSQL_ROOT_PASSWORD: hard_password
       MYSQL_DATABASE: hahnSoftware
       MYSQL_PASSWORD: mypassword
+    networks:
+      - hahn-network
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
     volumes:
       - ./script.sql:/docker-entrypoint-initdb.d/script.sql
+    
+  api:
+    build:
+      context: ./Backend/hahnSoftwareCrud
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - hahn-network  # Adicionando o serviço à rede
 
-
+  web:
+    build:
+      context: ./Frontend/hahn-crud-app
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - hahn-network   
+    depends_on:
+      - api 
